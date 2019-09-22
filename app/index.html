@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Will It Pass?</title>
+    <script src="map/mapdata.js"></script>
+    <script src="map/usmap.js"></script>
+    <script src="map/select.js"></script>
+    <meta name="viewport" content="device-width, initial-scale=1">
+    <link rel="icon" href="Poop_Emoji.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+<div>
+    <h1 style="margin: 25px 25px 0px 25px"><strong>Will It Pass?</strong></h1>
+    <a href="#about" style="margin: 0px 0px 0px 25px">About</a>
+    <h4 style="margin: 25px">Select your state(s) below:</h4>
+</div>
+
+<div id="map" style="margin: 0px 50px 0px 50px"></div>
+
+<h4 style="margin: 25px"><strong>What is a cause you are interested in?</strong></h4>
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Ex. Preventing Wildfires" style="margin: 0px 0px 15px 25px" aria-label="Ex. Preventing Wildfires" aria-describedby="button-addon2">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2" style="margin: 0px 25px 15px 0px">Submit!</button>
+    </div>
+</div>
+
+
+<hr style="margin: 25px">
+<h2 style="margin: 25px" id="about">What is 'Will It Pass?'?</h2>
+<p style="margin: 25px">Will it Pass? is an intelligent predictor of whether a certain politician will vote to pass or reject a bill on a certain topic. It is powered by executing a machine learning model built on the past votes of politicians in the US.</p>
+
+
+
+</body>
+
+<footer>
+    <font size="1" style="margin: 0pt 0pt 5pt 20pt">Last modified: </font>
+    <font size="1" id="demo"></font>
+</footer>
+
+<script>
+function myFunction() {
+  var x = document.lastModified;
+  document.getElementById("demo").innerHTML = x;
+}
+myFunction()
+</script>
+
+</html>
