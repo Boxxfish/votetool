@@ -123,6 +123,7 @@
         }
         else{ //select state
           select(state);
+          document.getElementById("insert").innerHTML = selected;
         }
       }
     }
