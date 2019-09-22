@@ -13,14 +13,14 @@ from tensorflow.python.keras.models import load_model
 graph = tf.compat.v1.get_default_graph()
 sess = tf.get_default_session()
 
-def model_setup(model_filename, word2id_filename):
+def model_setup(model_filename, word2id_filename, weights_filename):
 
 	# Model reconstruction from JSON file
 	with open(model_filename, 'r') as f:
 		model = tf.keras.models.model_from_json(f.read())
 
 	# Load weights into the new model
-	model.load_weights('models/model_weights_1.h5')
+	model.load_weights(weights_filename)
 
 	model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
@@ -34,7 +34,11 @@ def predict_sentiment(text, model, word2id, max_words=1000):
 	text = str(text)
 	text = text.split(" ")
 	text = [word.lower() for word in text]
-	text = [word2id[word] for word in text]
+	for word in text:
+		if word in word2id:
+			text.append(word2id[word])
+		else:
+			text.append(len(word2id.keys()))
 	text = sequence.pad_sequences([text], maxlen=max_words)
 	global sess
 	text_pred = None

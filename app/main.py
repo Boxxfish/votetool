@@ -44,12 +44,13 @@ def results(selected_states="none", words="none"):
         #word2ids is an array of the filenames of word2ids
         senators = []
         sen_state = []
-        models = ["models/model_architecture_set_0.json", "models/model_architecture_set_1.json"]
-        word2ids = ["models/word2id_set0.json", "models/word2id_set1.json"]
-        k = np.length(models)
+        models = ["app/models/model_architecture_set_0.json", "app/models/model_architecture_set_1.json"]
+        word2ids = ["app/models/word2id_set_0.json", "app/models/word2id_set_1.json"]
+        weights = ['app/models/model_weights_set_0.h5', 'app/models/model_weights_set_1.h5']
+        k = len(models)
         sentiments = []
         for i in range(k):
-            (model, word2id) = model_setup(models[i], word2ids[i])
+            (model, word2id) = model_setup(models[i], word2ids[i], weights[i])
             sentiments.append(predict_sentiment(words, model, word2id))
             print(i)
 
