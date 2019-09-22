@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Will It Pass?</title>
-    <script src="map/mapdata.js"></script>
-    <script src="map/usmap.js"></script>
-    <script src="map/select.js"></script>
+    <script src="{{ url_for('static', filename='js/mapdata.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/usmap.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/select.js') }}"></script>
     <meta name="viewport" content="device-width, initial-scale=1">
-    <link rel="icon" href="Poop_Emoji.png" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='Poop_Emoji.png') }}" type="image/png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>

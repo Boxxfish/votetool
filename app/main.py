@@ -24,12 +24,12 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Return the landing page of Will It Pass?"""
-    return render_template("index.html")
+    return render_template('index.html')
 
 @app.route('/results/')
 @app.route('/results/<string:selected_states>/<string:words>')
 def results(selected_states="none", words="none"):
-    if selected_states=="none" or words == "none":
+    if selected_states == "none" or words == "none":
         return "Make sure you selected your state(s) AND submitted a topic of interest. Press the back button to retry."
     else:
         return render_template("results.html", selected_states=selected_states, words=words)
