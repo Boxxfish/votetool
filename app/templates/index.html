@@ -9,7 +9,15 @@
     <meta name="viewport" content="device-width, initial-scale=1">
     <link rel="icon" href="{{ url_for('static', filename='Poop_Emoji.png') }}" type="image/png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <script src="{{ url_for('static', filename='js/mapdata.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/usmap.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/select.js') }}"></script>
+    <script>
+    function packageData() {
+    var words = document.getElementById("userInput").value
+    location.href = "results/" + simplemaps_select.selected + "/" + words
+    }
+</script>
 </head>
 
 <body>
@@ -21,12 +29,16 @@
 
 <div id="map" style="margin: 0px 50px 0px 50px"></div>
 
+<p id="insert"></p>
+
 <h4 style="margin: 25px"><strong>What is a cause you are interested in?</strong></h4>
 
 <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Ex. Preventing Wildfires" style="margin: 0px 0px 15px 25px" aria-label="Ex. Preventing Wildfires" aria-describedby="button-addon2">
-    <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2" style="margin: 0px 25px 15px 0px">Submit!</button>
+    <form>
+    <input type="text" id="userInput" class="form-control" placeholder="Ex. Preventing Wildfires" style="margin: 0px 0px 15px 25px" aria-label="Ex. Preventing Wildfires" aria-describedby="button-addon2">
+    </form>
+        <div class="input-group-append">
+        <button onclick="packageData()" class="btn btn-outline-secondary" type="button" id="button-addon2" style="margin: 0px 25px 15px 0px">Submit!</button>
     </div>
 </div>
 
